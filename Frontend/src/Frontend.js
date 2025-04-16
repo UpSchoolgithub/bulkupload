@@ -30,7 +30,7 @@ function App() {
     formData.append('answerSheet', answerSheet);
 
     try {
-      const response = await axios.post('http://3.106.197.27/upload', formData, {
+      const response = await axios.post('http://3.106.197.27:81/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
