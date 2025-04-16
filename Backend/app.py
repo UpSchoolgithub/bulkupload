@@ -81,7 +81,7 @@ def process_with_mathpix(file):
     response = requests.get(url, headers=headers)
     mmd_content = response.text
 
-    mmd_content = mmd_content.replace("{", "").replace("}", "").replace("\section*", "").replace("$\qquad$", "__")
+    mmd_content = mmd_content.replace("{", "").replace("}", "").replace(r"\section*", "").replace(r"$\qquad$", "__")
     temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".txt")
     temp_file.write(mmd_content.encode('utf-8'))
     temp_file.close()
